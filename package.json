@@ -1,0 +1,19 @@
+{
+  "name": "playwright-e2e-ui-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.22.2",
+    "@types/adm-zip": "^0.5.0"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.9",
+    "csv-parse": "^5.1.0",
+    "dayjs": "^1.11.2"
+  }
+}
