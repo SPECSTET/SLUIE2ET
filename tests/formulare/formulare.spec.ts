@@ -15,7 +15,7 @@ test.beforeEach(async ({ page }) => {
 
 
 
-test.describe('Formulartests @forms', () => {
+test.describe(process.env.SLUIE2ET_ENV.toUpperCase() + ' - Formulartests @forms', () => {
 
   test('Tooltip Screenshot Test', async ({ page }) => {
     await page.locator("[data-g-name='Tooltip']").scrollIntoViewIfNeeded();
@@ -28,7 +28,7 @@ test.describe('Formulartests @forms', () => {
       })
       )
       .toMatchSnapshot({
-        threshold: 0.05 
+        maxDiffPixelRatio: 0.05
       });
   });
 
@@ -44,7 +44,7 @@ test.describe('Formulartests @forms', () => {
       })
       )
       .toMatchSnapshot({
-        threshold: 0.02 
+        maxDiffPixelRatio: 0.02 
       });
   });
 

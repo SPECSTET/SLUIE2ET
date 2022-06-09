@@ -39,7 +39,7 @@ const config: PlaywrightTestConfig = {
     /* Make always a screenshot after test run. See https://playwright.dev/docs/test-configuration#automatic-screenshots */
     screenshot: "on",
     /* Save video on error. See https://playwright.dev/docs/test-configuration#record-video */
-    video: "off", //"retain-on-failure"
+    video: "retain-on-failure", 
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
