@@ -1,5 +1,7 @@
+.vscode/
 node_modules/
 test-results/
 playwright-report/
 /report.zip
 /vanity-url-validation.csv
+/_dev_info.txt
