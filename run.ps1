@@ -7,7 +7,7 @@ param
 
 Clear-Host
 
-Out-File -FilePath .\Process.txt -InputObject $(get-date -Format 'hh:mm, dd/MM/yyyy') -Encoding ASCII -Width 50
+Out-File -FilePath .\Process.txt -InputObject "$(get-date -Format 'hh:mm, dd/MM/yyyy') - Running tests on $Env with disclaimer set to $Disclaimer and with filter $Tag" -Encoding ASCII -Width 50
 
 Set-Item -Path Env:\SLUIE2ET_ENV -Value $Env
 switch ($Env)                         
@@ -29,7 +29,7 @@ if ($Disclaimer -eq "0") {
     Set-Item -Path Env:\SLUIE2ET_HAS_DISCLAIMER -Value "1"
 }
 
-"Running tests on $Env:SLUIE2ET_URL with disclaimer set to $Env:SLUIE2ET_HAS_DISCLAIMER and with filter @$Tag"
+"Running tests on $Env with disclaimer set to $Disclaimer and with filter $Tag"
 
 if ($Tag.length -gt 0) {
     npx `playwright test --grep @$Tag`
