@@ -7,6 +7,8 @@ param
 
 Clear-Host
 
+Out-File -FilePath .\Process.txt -InputObject $(get-date -Format 'hh:mm, dd/MM/yyyy') -Encoding ASCII -Width 50
+
 Set-Item -Path Env:\SLUIE2ET_ENV -Value $Env
 switch ($Env)                         
     {                        
