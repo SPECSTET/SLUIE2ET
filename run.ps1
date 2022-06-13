@@ -44,3 +44,5 @@ if($Env -eq "uat") {
     azcopy copy .\playwright-report\* $Env:SLUIE2ET_BLOB_URL --recursive
     "To see the result, visit $Env:SLUIE2ET_REPORT_URL"
 }
+
+Out-File  -Append -FilePath .\Process.txt -InputObject "$(get-date -Format 'hh:mm, dd/MM/yyyy') - Test run finished" -Encoding ASCII -Width 50
