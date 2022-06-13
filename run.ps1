@@ -7,7 +7,7 @@ param
 
 Clear-Host
 
-Out-File -FilePath .\Process.txt -InputObject "$(get-date -Format 'hh:mm, dd/MM/yyyy') - Running tests on $Env with disclaimer set to $Disclaimer and with filter $Tag" -Encoding ASCII -Width 50
+Out-File  -Append -FilePath .\Process.txt -InputObject "$(get-date -Format 'hh:mm, dd/MM/yyyy') - Running tests on $Env with disclaimer set to $Disclaimer and with filter $Tag" -Encoding ASCII -Width 50
 
 Set-Item -Path Env:\SLUIE2ET_ENV -Value $Env
 switch ($Env)                         
