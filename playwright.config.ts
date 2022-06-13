@@ -33,7 +33,7 @@ const config: PlaywrightTestConfig = {
     [ 'json', {outputFile: './test-results/test-result.json'} ],
     [ 'html', { open: 'never' } ]
    ],
-  globalTeardown: './globalTeardown.ts',
+  /* globalTeardown: './globalTeardown.ts', */
    /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Make always a screenshot after test run. See https://playwright.dev/docs/test-configuration#automatic-screenshots */
