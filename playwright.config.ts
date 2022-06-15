@@ -13,13 +13,13 @@ import { devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   testDir: './tests',
   /* Maximum time one test can run for. */
-  timeout: 35 * 1000,
+  timeout: 120 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 30 * 1000
+    timeout: 60 * 1000
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -33,13 +33,13 @@ const config: PlaywrightTestConfig = {
     [ 'json', {outputFile: './test-results/test-result.json'} ],
     [ 'html', { open: 'never' } ]
    ],
-  /* globalTeardown: './globalTeardown.ts', */
+  globalTeardown: './globalTeardown.ts', 
    /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Make always a screenshot after test run. See https://playwright.dev/docs/test-configuration#automatic-screenshots */
     screenshot: "on",
     /* Save video on error. See https://playwright.dev/docs/test-configuration#record-video */
-    video: "retain-on-failure", 
+    video: "retain-on-failure",
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */

@@ -8,3 +8,7 @@ playwright-report/
 /tests/formulare/formulare.spec.ts-snapshots
 /Process.txt
 /testrunner.log
+/package-lock.json
+/test-results/
+/playwright-report/
+/playwright/.cache/
