@@ -1,5 +1,11 @@
 # Playwright UI-Testing
 
+## [TODO]
+- Log on every test
+- Better report with date and result json
+- Send mail after test run
+- Dockerize
+
 ## Parameterize tests
 https://playwright.dev/docs/test-parameterize 
 
@@ -96,6 +102,4 @@ Check it out at [Playwright code generator](https://www.youtube.com/watch?v=wGr5
 In the form tests you will see at *line 15* that there is a tag **@forms**. with this tag you can define, **which tests should be run**. So you can run **only the form tests** with the command `npx playwright test --report-dir 'test-results/' --grep '@vanitys'`
 
 To read more about the test annotations, read the [docs](https://playwright.dev/docs/test-annotations).
-
-
 
