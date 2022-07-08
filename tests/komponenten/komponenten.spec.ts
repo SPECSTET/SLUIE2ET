@@ -43,14 +43,14 @@ test.describe(process.env.SLUIE2ET_ENV.toUpperCase() + ' - Komponententests @com
 
     await page.goto(process.env.SLUIE2ET_URL + record.url);
     await page.reload({ waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(5000);
     
     const handle = await page.$('header');
     if(handle){
       await handle.waitForElementState('stable');
     }
     
-    await page.waitForTimeout(3000);
+    //await page.waitForTimeout(3000);
 
     await page.evaluate(async () => {
       const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -62,7 +62,7 @@ test.describe(process.env.SLUIE2ET_ENV.toUpperCase() + ' - Komponententests @com
     });
     await page.waitForLoadState('networkidle');
 
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(5000);
 
     expect(
       await page.screenshot({ 
