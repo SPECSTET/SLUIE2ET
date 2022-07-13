@@ -44,12 +44,12 @@ test.describe('Validate Vanity URLs @vanitys', () => {
         `${record.vanity};${url};${response.status()}\n`
       );
       
-      expect.soft(response.status()).not.toBe(404);
+      expect(response.status()).not.toBe(404);
 
-      expect(
-        url,
-        `Vanity '${record.vanity}' sollte '${record.url}' sein, ist aber ${url}`
-      ).toContain(record.url);
+      // expect(
+      //   url,
+      //   `Vanity '${record.vanity}' sollte '${record.url}' sein, ist aber ${url}`
+      // ).toContain(record.url);
     });
   }
 });

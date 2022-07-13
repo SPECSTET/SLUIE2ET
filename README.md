@@ -1,17 +1,22 @@
 # Playwright UI-Testing
 
 ## [TODO]
-- Log on every test
 - Better report with date and result json
 - Send mail after test run
 - Dockerize
 
 ## Parameterize tests
 https://playwright.dev/docs/test-parameterize 
+.\run.ps1 pav 1 components
 
 ## Installation
+1. Node with npm
+2. azcopy in windows directory
+posh-git
+3. Visual Studio Code
 1. Install the Visual Studio Code [Playwright Test Extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) 
-2. Run `npm install` inside the project directory of this example of the Node implementation
+2. Run `npm install` inside the project directory
+6. Run `npx playwright install` inside the project directory
 3. View the [latest Playwright videos](https://www.youtube.com/c/Playwrightdev)
 
 

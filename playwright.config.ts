@@ -26,7 +26,7 @@ const config: PlaywrightTestConfig = {
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [ 
     [ 'dot' ],
@@ -50,7 +50,7 @@ const config: PlaywrightTestConfig = {
   },
 
   /* Run all tests over ALL FILES in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
 
   /* Configure projects for major browsers */
   projects: [
@@ -61,7 +61,8 @@ const config: PlaywrightTestConfig = {
         viewport: { 
           width: 1920,
           height: 1280,
-        }
+        },
+        ignoreHTTPSErrors: true,
       },
     },
 

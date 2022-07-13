@@ -7,6 +7,8 @@ param
 
 Clear-Host
 
+./ReloadSolution.ps1
+
 Out-File  -Append -FilePath C:\Repos\SLUIE2ET\testrunner.log -InputObject "$(get-date -Format 'hh:mm, dd/MM/yyyy') - Running tests on $Env with disclaimer set to $Disclaimer and with filter $Tag" -Encoding ASCII -Width 50
 
 Set-Item -Path Env:\SLUIE2ET_ENV -Value $Env

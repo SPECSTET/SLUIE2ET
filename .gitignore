@@ -5,7 +5,6 @@ playwright-report/
 /report.zip
 /vanity-url-validation.csv
 /_dev_info.txt
-/tests/formulare/formulare.spec.ts-snapshots
 /Process.txt
 /testrunner.log
 /package-lock.json

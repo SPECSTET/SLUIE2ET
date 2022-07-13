@@ -1,7 +1,5 @@
 stop-process -name Chromium -Force
 
-Import-Module posh-git
-
 Set-Location -Path C:\Repos\SLUIE2ET
 Clear-Host
 
