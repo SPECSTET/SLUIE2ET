@@ -7,6 +7,8 @@
 
 ## Parameterize tests
 https://playwright.dev/docs/test-parameterize 
+https://playwright.dev/docs/test-cli 
+https://playwright.dev/docs/test-reporters#built-in-reporters 
 .\run.ps1 pav 1 components
 
 ## Installation

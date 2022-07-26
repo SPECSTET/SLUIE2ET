@@ -20,6 +20,7 @@ test.describe(process.env.SLUIE2ET_ENV.toUpperCase() + ' - Formulartests @forms'
   test('Tooltip Screenshot Test', async ({ page }) => {
     await page.locator("[data-g-name='Tooltip']").scrollIntoViewIfNeeded();
     await page.locator("[data-g-name='Tooltip']").click();
+    await page.waitForTimeout(2000);
     
     expect(
       await page.locator("[data-g-name='TooltipPopup']").screenshot({ 

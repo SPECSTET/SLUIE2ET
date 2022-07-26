@@ -31,12 +31,23 @@ if ($Disclaimer -eq "0") {
     Set-Item -Path Env:\SLUIE2ET_HAS_DISCLAIMER -Value "1"
 }
 
-"Running tests on $Env with disclaimer set to $Disclaimer and with filter $Tag"
+"Running tests on --- $Env --- with disclaimer set to $Disclaimer and with filter $Tag"
 
 if ($Tag.length -gt 0) {
     npx `playwright test --grep @$Tag`
 } else {
-    npx playwright test
+    switch ($Env)                         
+    {                        
+        "uat" {
+            npx `playwright test --grep-invert @vanitys`
+        }                        
+        "pav" {
+            npx playwright test
+        }                        
+        Default {
+            npx `playwright test --grep-invert @vanitys`
+        }                        
+    }
 }
 
 if($Env -eq "uat") {
