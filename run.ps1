@@ -50,6 +50,8 @@ if ($Tag.length -gt 0) {
     }
 }
 
+((Get-Content -path .\playwright-report\index.html -Raw) -replace "<title>Playwright Test Report</title>","<title>$(Get-Date -format 'u') - Playwright Test Report</title>") | Set-Content -Path .\playwright-report\index.html
+
 if($Env -eq "uat") {
     Start-Process "file:///$(Get-Location)/playwright-report/index.html"
     "Check your browser for the report"
