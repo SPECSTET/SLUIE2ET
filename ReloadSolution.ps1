@@ -3,6 +3,7 @@ stop-process -name Chromium -Force
 Set-Location -Path C:\Repos\SLUIE2ET
 Clear-Host
 
+git reset --hard HEAD
 git fetch --all;
 git pull;
 
