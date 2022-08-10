@@ -42,7 +42,7 @@ test.describe(process.env.SLUIE2ET_ENV.toUpperCase() + ' - Komponententests @com
     // });
 
     await page.goto(process.env.SLUIE2ET_URL + record.url);
-    await page.reload({ waitUntil: 'domcontentloaded' });
+    //await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(5000);
     
     const handle = await page.$('header');
