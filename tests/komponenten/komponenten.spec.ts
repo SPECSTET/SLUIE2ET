@@ -56,7 +56,7 @@ test.describe(process.env.SLUIE2ET_ENV.toUpperCase() + ' - Komponententests @com
       const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
       for (let i = 0; i < document.body.scrollHeight; i += 10) {
         window.scrollTo(0, i);
-        await delay(10);
+        await delay(20);
       }
       window.scrollTo(0, 0);
     });
