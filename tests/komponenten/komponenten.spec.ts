@@ -6,8 +6,19 @@ test.use({
   video: 'off'
 });
 
-test.beforeEach(async ({ page }) => {
+//var url = '';
+
+test.beforeEach(async ({ page }) => { 
   await page.goto(process.env.SLUIE2ET_URL + '/de/autom_testing.html');
+  await page.waitForLoadState('networkidle');
+
+  //var url = await page.url();
+  if(page.url().includes('login')){
+    await page.locator('[name=j_username]').fill('cug-ch-testing-viewer');
+    await page.locator('[name=j_password]').fill('Login4Acce$$2Te$tingCug');
+    await page.locator('button[type=submit]').click();
+    await page.waitForLoadState('networkidle');
+  }
 
   if(process.env.SLUIE2ET_HAS_DISCLAIMER == '1'){
     await page.locator('text=Hinweis schliessen').click();
