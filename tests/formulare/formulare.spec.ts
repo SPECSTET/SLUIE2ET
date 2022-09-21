@@ -6,17 +6,17 @@ const year = new Date().getFullYear();
 const date = dayjs(`${year}-${month}-15`).format('DD.MM.YYYY');
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(process.env.SLUIE2ET_URL + '/de/autom_testing.html');
+  await page.goto(process.env.SLUIE2ET_URL + '/de/autom_testing/forms/alle-komponenten-formular-standardseite-store.html');
   await page.waitForTimeout(1000);
   await page.waitForLoadState('networkidle');
 
-  //var url = await page.url();
   if(page.url().includes('login')){
     await page.locator('[name=j_username]').fill('cug-ch-testing-viewer');
     await page.locator('[name=j_password]').fill('Login4Acce$$2Te$tingCug');
     await page.locator('button[type=submit]').click();
     await page.waitForTimeout(1000);
     await page.waitForLoadState('networkidle');
+    await page.goto(process.env.SLUIE2ET_URL + '/de/autom_testing/forms/alle-komponenten-formular-standardseite-store.html');
   }
 
   if(process.env.SLUIE2ET_HAS_DISCLAIMER == '1'){
