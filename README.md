@@ -131,6 +131,6 @@ To read more about the test annotations, read the [docs](https://playwright.dev/
 ## More stuff
 
 - [Playwright YouTube Playlist](https://www.youtube.com/playlist?list=PLriKR1xQz6aLcOx7QXvaBeSeMSDK0lZHF)
-- [Automated cloud application testing with Azure and Playwright](https://www.youtube.com/watch?v=LMR8dxEdL7M)
+- [Playwright + Azure Pipeline](https://www.youtube.com/watch?v=RCzXuCt8Lng)
 - [Playwright YouTube channel](https://www.youtube.com/@Playwrightdev)
 - [Playwright on Github](https://github.com/microsoft/playwright)
