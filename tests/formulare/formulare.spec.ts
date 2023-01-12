@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import env from '../../env.config';
 import dayjs from 'dayjs';
 
 const month = new Date().getMonth() + 1;
@@ -7,33 +8,29 @@ const date = dayjs(`${year}-${month}-15`).format('DD.MM.YYYY');
 
 test.beforeEach(async ({ page }) => {
 	await page.goto(
-		process.env.SLUIE2ET_URL +
-			'/de/autom_testing/forms/alle-komponenten-formular-standardseite-store.html'
+		env.baseUrl + '/de/autom_testing/forms/alle-komponenten-formular-standardseite-store.html'
 	);
 	await page.waitForTimeout(1000);
 	await page.waitForLoadState('networkidle');
 
-	if (process.env.SLUIE2ET_HAS_DISCLAIMER == '1') {
+	if (env.hasDisclaimer) {
 		await page.locator('text=Hinweis schliessen').click();
 		await page.waitForLoadState('networkidle');
 	}
 
 	if (page.url().includes('login')) {
-		let user = process.env.SLUIE2ET_CUG_USER?.toString() ?? '';
-		let pw = process.env.SLUIE2ET_CUG_PW?.toString() ?? '';
-		await page.locator('[name=j_username]').fill(user);
-		await page.locator('[name=j_password]').fill(pw);
+		await page.locator('[name=j_username]').fill(env.cugUser);
+		await page.locator('[name=j_password]').fill(env.cugPw);
 		await page.locator('button :text("Anmelden")').click();
 		await page.waitForTimeout(1000);
 		await page.waitForLoadState('networkidle');
 		await page.goto(
-			process.env.SLUIE2ET_URL +
-				'/de/autom_testing/forms/alle-komponenten-formular-standardseite-store.html'
+			env.baseUrl + '/de/autom_testing/forms/alle-komponenten-formular-standardseite-store.html'
 		);
 	}
 });
 
-test.describe(process.env.SLUIE2ET_ENV?.toUpperCase() ?? 'NONE' + ' - Formulartests @forms', () => {
+test.describe(env.env + ' - Formulartests @forms', () => {
 	test('Tooltip Screenshot Test', async ({ page }) => {
 		await page.locator("[data-g-name='Tooltip']").scrollIntoViewIfNeeded();
 		await page.locator("[data-g-name='Tooltip']").click();

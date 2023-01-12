@@ -128,6 +128,9 @@ In the form tests you will see at _line 15_ that there is a tag **@forms**. with
 
 To read more about the test annotations, read the [docs](https://playwright.dev/docs/test-annotations).
 
-# [TODO]
+## More stuff
 
-- Set Env vars in playwright.config.ts
+- [Playwright YouTube Playlist](https://www.youtube.com/playlist?list=PLriKR1xQz6aLcOx7QXvaBeSeMSDK0lZHF)
+- [Automated cloud application testing with Azure and Playwright](https://www.youtube.com/watch?v=LMR8dxEdL7M)
+- [Playwright YouTube channel](https://www.youtube.com/@Playwrightdev)
+- [Playwright on Github](https://github.com/microsoft/playwright)

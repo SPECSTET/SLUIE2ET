@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
+import env from '../../env.config';
 
 // Deactivate Screenshots and Video recording for vanity url tests
 test.use({
@@ -20,7 +21,7 @@ test.describe('Validate Vanity URLs @vanitys', () => {
 	for (const record of records) {
 		test(`Vanity URL: ${record.vanity}`, async ({ page }) => {
 			const [_, response] = await Promise.all([
-				page.goto(process.env.SLUIE2ET_URL + `/${record.vanity}`, {
+				page.goto(env.baseUrl + `/${record.vanity}`, {
 					waitUntil: 'networkidle',
 				}),
 				page.waitForEvent(
