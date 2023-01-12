@@ -19,8 +19,10 @@ test.beforeEach(async ({ page }) => {
 	}
 
 	if (page.url().includes('login')) {
-		await page.locator('[name=j_username]').fill('cug-ch-testing-viewer');
-		await page.locator('[name=j_password]').fill('Login4Acce$$2Te$tingCug');
+		let user = process.env.SLUIE2ET_CUG_USER?.toString() ?? '';
+		let pw = process.env.SLUIE2ET_CUG_PW?.toString() ?? '';
+		await page.locator('[name=j_username]').fill(user);
+		await page.locator('[name=j_password]').fill(pw);
 		await page.locator('button :text("Anmelden")').click();
 		await page.waitForTimeout(1000);
 		await page.waitForLoadState('networkidle');
@@ -31,7 +33,7 @@ test.beforeEach(async ({ page }) => {
 	}
 });
 
-test.describe(process.env.SLUIE2ET_ENV.toUpperCase() + ' - Formulartests @forms', () => {
+test.describe(process.env.SLUIE2ET_ENV?.toUpperCase() ?? 'NONE' + ' - Formulartests @forms', () => {
 	test('Tooltip Screenshot Test', async ({ page }) => {
 		await page.locator("[data-g-name='Tooltip']").scrollIntoViewIfNeeded();
 		await page.locator("[data-g-name='Tooltip']").click();
