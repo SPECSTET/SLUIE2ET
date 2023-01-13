@@ -32,6 +32,7 @@ const config: PlaywrightTestConfig = {
 		['dot'],
 		['json', { outputFile: './test-results/test-result.json' }],
 		['html', { open: 'never' }],
+		['junit', { outputFile: 'results.xml' }],
 	],
 	globalTeardown: './globalTeardown.ts',
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
