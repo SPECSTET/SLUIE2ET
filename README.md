@@ -134,3 +134,8 @@ To read more about the test annotations, read the [docs](https://playwright.dev/
 - [Playwright + Azure Pipeline](https://www.youtube.com/watch?v=RCzXuCt8Lng)
 - [Playwright YouTube channel](https://www.youtube.com/@Playwrightdev)
 - [Playwright on Github](https://github.com/microsoft/playwright)
+
+## [TODO]
+
+- https://stackoverflow.com/questions/70262213/playwright-before-each-for-all-spec-files
+- await page.setExtraHTTPHeaders({'Funky': 'Play'});
