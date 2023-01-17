@@ -12,3 +12,4 @@ playwright-report/
 /playwright-report/
 /playwright/.cache/
 results.xml
+package-lock.json
