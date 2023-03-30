@@ -74,7 +74,7 @@ test.describe(env.env + ' - Komponententests @components', () => {
 				}
 				window.scrollTo(0, 0);
 			});
-			await page.waitForLoadState('networkidle');
+			// await page.waitForLoadState('networkidle');
 
 			await page.waitForTimeout(5000);
 
