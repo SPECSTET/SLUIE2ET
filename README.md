@@ -39,6 +39,7 @@ To run the tests parameterized you can use the PowerShell test runner:
 |--- |--- |--- |--- |--- |
 | .\run.ps1 | pav | 1 | components | Tests all components on PAV (PAV has a disclaimer) |
 | .\run.ps1 | uat | 0 | forms | Run all form tests on UAT (UAT has a disclaimer) |
+--grep-invert @vanitys
 
 ### More about parametrization
 
