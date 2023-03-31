@@ -11,8 +11,7 @@ test.beforeEach(async ({ page }) => {
 	await page.goto(
 		env.baseUrl + '/de/autom_testing/forms/alle-komponenten-formular-standardseite-store.html'
 	);
-	await page.waitForTimeout(1000);
-	await page.waitForLoadState('networkidle');
+	await page.waitForTimeout(2000);
 
 	if (env.hasDisclaimer) {
 		await page.locator('text=Hinweis schliessen').click();
@@ -45,15 +44,17 @@ test.describe(env.env + ' - Komponententests @components', () => {
 			browserContext.clearCookies();
 
 			// BEISPIEL FÜR REQUEST INTERCEPTION
-			// const imgResponse = await page.request.fetch('https://picsum.photos/id/1000/2000/2000?grayscale');
-			// await page.route('**/*', async route => {
-			//   if(route.request().resourceType() === 'image' && route.request().url().endsWith('.jpg')){
-			//     route.fulfill({
-			//       response: imgResponse
-			//     });
-			//   } else {
-			//     route.continue();
-			//   }
+			// const imgResponse = await page.request.fetch(
+			// 	'https://picsum.photos/id/1000/2000/2000?grayscale'
+			// );
+			// await page.route('**/*', async (route) => {
+			// 	if (route.request().resourceType() === 'image' && route.request().url().endsWith('.jpg')) {
+			// 		route.fulfill({
+			// 			response: imgResponse,
+			// 		});
+			// 	} else {
+			// 		route.continue();
+			// 	}
 			// });
 
 			await page.goto(env.baseUrl + record.url);
